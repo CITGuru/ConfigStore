@@ -12,57 +12,59 @@ Example: `~/.localconfig/configstore/name.json`
 ## Installation
 
 ```bash
-pip install pyconfig
+pip install pyconfigstore
 ```
 
 ## Usage
 
 ```python
-from pyconfig import ConfigStore
+from pyconfigstore import ConfigStore
 
-// create a Configstore instance with a unique name e.g. gnit
-// Package name and optionally some default values
+# create a Configstore instance with a unique name e.g. gnit
+# Package name and optionally some default values
 conf = ConfigStore("Gnit", {"foo": 'bar'});
 
 print(conf.get('foo'));
-//>>> 'bar'
+#>>> 'bar'
 
 conf.set('awesome', True);
 print(conf.get('awesome'));
-//>>> True
+#>>> True
 
-// Use dot-notation to set nested properties
+# Use dot-notation to set nested properties
 conf.set('bar.baz', True);
 print(conf.get('bar'));
-//>>> {"baz": True}
+#>>> {"baz": True}
+
+# escape dot-notation to set nested properties
+conf.set('bar.baz\\.bag', True);
+print(conf.get('bar'));
+#>>> {"baz.bag": True}
 
 conf.delete('awesome');
 print(conf.get('awesome'));
-//>>>
+#>>>
 ```
-
 
 ## API
 
-### Configstore(packageName, [defaults], [options])
+### Configstore(packageName, [defaults], globalConfigPath)
 
 Returns a new instance.
 
 #### packageName
 
-Type: `string`
+Type: `str`
 
 Name of your package.
 
 #### defaults
 
-Type: `Object`
+Type: `dicts`
 
 Default config.
 
-#### options
-
-##### globalConfigPath
+#### globalConfigPath
 
 Type: `bool`<br>
 Default: `False`
@@ -77,7 +79,7 @@ You can use dot-notation to set, get, update and delete nested dict properties
 
 Set an item.
 
-### .set(object)
+### .set(dict)
 
 Set multiple items at once.
 
@@ -97,9 +99,9 @@ Delete an item.
 
 Delete all items.
 
-### .all
+### .all()
 
-Get all the config as an object or replace the current config with an object:
+Get all the config as a dict or replace the current config with an object:
 
 ```python
 conf.all({
@@ -115,8 +117,23 @@ Get the item count.
 
 Get the path to the config file. Can be used to show the user where the config file is located or even better open it for them.
 
+## Contribute
+
+Yes, you can contribute. Just dm on twitter:[@OyetokeT](http://twitter.com/@OyetokeT)
+
+## TODO
+
+There are couple of things I still need to add
+
+1. Dot-notation: Currently, you can only set configs using this feature. (get, delete)
+
+2. Stream: I planned to add a param that'll indicate that you want it to hit the file for every operation. Well that's how it works currently though. But to make it smarter, we don't need to hit the file for (size, get, has, all) operation. We are going to call the `.all()` once to get the configs in dicts and do the operation just using dict properties.
+
+and more...
 
 ## License
 Copyright - 2018
-Oyetoke Toby <twitter:@OyetokeT>
+
+Oyetoke Toby twitter:[@OyetokeT](http://twitter.com/@OyetokeT)
+
 MIT LICENSE

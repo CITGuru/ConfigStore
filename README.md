@@ -4,7 +4,7 @@ A Python module for handling config files. It helps handles persist config files
 
 > Easily load and persist config without having to think about where and how
 
-It's built base on nodejs [configstore](https:#github.com/yeoman/configstore)
+It's built base on nodejs [configstore](https://github.com/yeoman/configstore)
 
 Config is stored in a JSON file located in `$XDG_CONFIG_HOME` or `~/.localconfig`.<br>
 Example: `~/.localconfig/configstore/name.json`
@@ -12,13 +12,13 @@ Example: `~/.localconfig/configstore/name.json`
 ## Installation
 
 ```bash
-pip install pyconfig
+pip install pyconfigstore
 ```
 
 ## Usage
 
 ```python
-from pyconfig import ConfigStore
+from pyconfigstore import ConfigStore
 
 # create a Configstore instance with a unique name e.g. gnit
 # Package name and optionally some default values

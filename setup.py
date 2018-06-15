@@ -13,7 +13,7 @@ def read(filename):
 long_description = read('README.md')
 
 setup(
-    name='pyconfig',
+    name='pyconfigstore',
     version='1.0.0',
     description=(
         'A Python module for handling config files. It helps handles persist config files and also giving the ability to set, get, update and delete config settings'

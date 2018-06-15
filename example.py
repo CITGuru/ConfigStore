@@ -1,4 +1,4 @@
-from pyconfig import ConfigStore
+from pyconfigstore import ConfigStore
 
 conf = ConfigStore("vestub", {"url":"http://vestub.com"}, True)
 print(conf.get("url"))
