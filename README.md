@@ -22,27 +22,27 @@ from pyconfigstore import ConfigStore
 
 # create a Configstore instance with a unique name e.g. gnit
 # Package name and optionally some default values
-conf = ConfigStore("Gnit", {"foo": 'bar'});
+conf = ConfigStore("Gnit", {"foo": 'bar'})
 
-print(conf.get('foo'));
+print(conf.get('foo'))
 #>>> 'bar'
 
-conf.set('awesome', True);
-print(conf.get('awesome'));
+conf.set('awesome', True)
+print(conf.get('awesome'))
 #>>> True
 
 # Use dot-notation to set nested properties
-conf.set('bar.baz', True);
-print(conf.get('bar'));
+conf.set('bar.baz', True)
+print(conf.get('bar'))
 #>>> {"baz": True}
 
 # escape dot-notation to set nested properties
-conf.set('bar.baz\\.bag', True);
-print(conf.get('bar'));
+conf.set('bar.baz\\.bag', True)
+print(conf.get('bar'))
 #>>> {"baz.bag": True}
 
-conf.delete('awesome');
-print(conf.get('awesome'));
+conf.delete('awesome')
+print(conf.get('awesome'))
 #>>>
 ```
 
