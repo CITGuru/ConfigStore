@@ -79,7 +79,7 @@ You can use dot-notation to set, get, update and delete nested dict properties
 
 Set an item.
 
-### .set(object)
+### .set(dict)
 
 Set multiple items at once.
 
