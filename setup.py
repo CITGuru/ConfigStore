@@ -20,6 +20,7 @@ setup(
           ' its based on Configstore.js'
     ),
     long_description=long_description,
+    long_description_content_type="text/markdown",
     license='MIT',
     url='https://github.com/CITGuru/ConfigStore',
     classifiers=[
