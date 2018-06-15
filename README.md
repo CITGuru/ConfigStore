@@ -119,7 +119,7 @@ Get the path to the config file. Can be used to show the user where the config f
 
 ## Contribute
 
-Yes, you can contribute. Just dm on <twitter:[@OyetokeT](http://twitter.com/@OyetokeT)>
+Yes, you can contribute. Just dm on twitter:[@OyetokeT](http://twitter.com/@OyetokeT)
 
 ## TODO
 
@@ -127,13 +127,13 @@ There are couple of things I still need to add
 
 1. Dot-notation: Currently, you can only set configs using this feature. (get, delete)
 
-2. Stream: I planned to add a param that'll indicate that you want it to hit the file for every operation. Well that's how it works currently though. But to make it smarter, we don't need to hit the file for (size, get, has, all) operation. We are going to call the `.all()` to get the configs and do the operation just using dict properties.
+2. Stream: I planned to add a param that'll indicate that you want it to hit the file for every operation. Well that's how it works currently though. But to make it smarter, we don't need to hit the file for (size, get, has, all) operation. We are going to call the `.all()` once to get the configs in dicts and do the operation just using dict properties.
 
 and more...
 
 ## License
 Copyright - 2018
 
-Oyetoke Toby <twitter:[@OyetokeT](http://twitter.com/@OyetokeT)>
+Oyetoke Toby twitter:[@OyetokeT](http://twitter.com/@OyetokeT)
 
 MIT LICENSE
